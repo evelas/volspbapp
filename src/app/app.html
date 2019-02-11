@@ -1,0 +1,32 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Меню</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item-divider color="light">Основное</ion-item-divider>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+      <ion-item-divider color="light">Другое</ion-item-divider>
+      <button menuClose ion-item *ngFor="let p of secondpages" (click)="openPage(p)">
+        {{p.title}}
+
+      </button>
+
+ 
+ 
+    </ion-list> 
+<!--      <section class="bottomadress">
+   <p>13-я линия Васильевского острова, 22В,Василеостровская</p>
+ </section> -->
+ 
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

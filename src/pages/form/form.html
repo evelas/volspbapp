@@ -1,0 +1,92 @@
+<ion-header>
+ 
+    <div class="top" > <!-- *ngIf="!isSearchbarOpened" -->
+        <img class="logo" src="images/logo.png" (click)="openAboutPage()" />
+
+         <!-- <button  color="light" clear class="iconbutton mapicon"  ><ion-icon class="exit" ios="ios-search" md="md-search"></ion-icon></button>  -->  
+
+
+         
+   <!--       <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="isSearchbarOpened=false" style="position: absolute;
+    top: 0;
+    height: 45px;
+    right: 0;
+    width: 80%;"></ion-searchbar>      
+       
+         
+
+               <button  color="light" clear class="iconbutton mapicon" *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true"   > <ion-icon class="exit" ios="ios-search" md="md-search"></ion-icon>
+               </button> -->
+ 
+         
+       
+    </div>
+
+ 
+</ion-header>
+
+
+<ion-content padding id="article">
+
+      <div class="middle">
+        <h1>Подача заявки   </h1>
+      </div>  
+
+
+  <article class="loginform">
+
+
+  <label>Номер телефона для связи</label><br> 
+    <input type="text"    ><br> <br>
+ 
+
+ <label>Чем Вас заинтересовало мероприятие?</label><br> 
+    <input type="text"   > <br> <br> 
+ 
+
+<button class="signin"     >Подать заявку</button>
+
+  </article>
+
+ 
+
+ 
+<!-- 
+<div padding>
+  
+  <button ion-button  (click)="register()">Register</button>
+</div> -->
+</ion-content>
+        <div id="bottom">
+
+                <button ion-button color="light" clear class="iconbutton" (click)="openLoginPage()">
+                    <div class="profile">
+                        <ion-icon class="ionicicons" md="md-contact" ios="ios-contact"></ion-icon>
+                    </div>
+                </button>
+
+                <button  ion-button color="light" clear class="iconbutton" (click)="openAreyouinPage()">
+                    <div class="padnote">
+                        <ion-icon class="ionicicons" ios="ios-bookmarks" md="md-bookmarks"></ion-icon>
+                    </div>
+                </button>
+
+                <button  ion-button color="light" clear class="iconbutton" >
+                    <div class="news">
+                        <ion-icon class="ionicicons" style="color:rgb(2, 78, 145);" md="md-home" ios="ios-home"></ion-icon>
+                    </div>
+                </button>
+
+                <button  ion-button color="light" clear class="iconbutton" (click)="openMapPage()">
+                    <div class="menu-heart">
+                      <ion-icon class="ionicicons" ios="ios-navigate" md="md-navigate"></ion-icon>
+                    </div>
+                </button>
+
+                <button menuToggle ion-button color="light" clear class="iconbutton">
+                    <div class="burger" >
+                        <ion-icon class="ionicicons" md="md-menu" ios="ios-menu"></ion-icon>
+                    </div>
+                </button>
+
+        </div>

@@ -1,0 +1,174 @@
+<ion-header>
+ 
+<!--     <ion-title>Page One</ion-title> -->
+    <div class="top">
+
+		 <button  color="light" clear (click)="scanCode()" class="scan">
+		 	<ion-icon  class="exit" name="qr-scanner"></ion-icon> 
+		 </button>
+
+        <img class="logo" src="images/logo.png" (click)="openAboutPage()"/>
+
+         <button  color="light" clear class="iconbutton mapicon" (click)="logout()"><ion-icon class="exit" ios="ios-exit" md="md-exit"></ion-icon></button>
+    </div>
+
+  
+</ion-header>
+
+
+<ion-content padding id="article">
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="tabs">
+      <ion-segment-button value="profile">
+        Профиль
+      </ion-segment-button>
+      <ion-segment-button value="warm">
+        Оповещения
+      </ion-segment-button>
+      <ion-segment-button value="history">
+        История
+      </ion-segment-button> 
+    </ion-segment>
+  </ion-toolbar>
+
+
+
+<div [ngSwitch]="tabs">
+    <ion-list *ngSwitchCase="'profile'">
+ <div class="middle">
+       
+      
+
+
+<!-- <p align="center">  <img src="https://volspb.ru/ww2018/avatars/{{ userDetails.email }}.jpg" style="width:200px; height: 200px; border-radius: 50%;" alt=""  (click)="cropImage()">  -->
+
+<p align="center" >  
+  <img src="images/2.png" *ngIf="!isImgOpened" (click)="isImgOpened=true" (click)="cropImage()">
+
+  <img src="{{ myphoto }}" *ngIf="isImgOpened" style="width:200px; height: 200px; border-radius: 50%;" alt=""  (click)="cropImage()"> 
+
+
+
+
+<!--   <button ion-button (click)="cropImage()" full color="dark">crop</button>
+  <button ion-button (click)="upload()" full color="dark">Upload</button> -->
+<!--  <form  action="" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="email" value="{{userDetails.email}}">
+
+<button ion-button (click)="uploadImage()"> Upload</button>
+</form> -->
+
+<!--  <button ion-button full (click)="takePhoto()" >
+  <ion-icon name="camera"></ion-icon>Take Photo
+  </button>
+
+   <button ion-button full (click)="cropPhoto()" >
+  <ion-icon name="camera"></ion-icon>crop Photo
+  </button>
+<ion-col col-6 *ngFor="let photo of photos; let id = index">
+        <ion-card class="block">
+          <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
+          <img [src]="photo" *ngIf="photo" />
+        </ion-card>
+</ion-col> -->
+
+        <h2>Привет, {{userDetails.name}}!</h2>
+
+        <p>Баллы полученные за посещение <br>мероприятий</p>
+
+        <article><span class="zone">Мероприятия по подготовке к ЧМ</span> <span class="zone2">{{userDetails.score}}</span> </article>
+
+       
+<!--          
+        <ion-item>
+          <ion-input type="text" placeholder="My Qr Data" [(ngModel)]="qrData"></ion-input>
+        </ion-item>   -->
+
+<!-- <button ion-button (click)="scanCode()"><ion-icon name="qr-scanner"></ion-icon></button> -->
+
+
+<!--     <button ion-button full (click)="createCode()">
+      <ion-icon name="barcode"></ion-icon>
+    </button>
+
+    <ion-card *ngIf="createdCode">
+      <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+      <ion-card-content>
+        <p>Value: {{ createdCode }}</p>
+      </ion-card-content>
+    </ion-card>   -->
+    
+<ion-card *ngIf="scannedCode">
+    <ion-card-content>
+      <p>Value: {{ scannedCode }}</p>
+    </ion-card-content>
+
+</ion-card>
+
+      </div> 
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'warm'">
+  <ion-card *ngFor="let item of dataSet">
+    <ion-card-content>
+     <p [innerHTML]="item.feed | linky"></p>
+     <span>{{ convertTime(item.created) }}</span>
+    </ion-card-content>
+  </ion-card>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'history'">
+  <ion-card *ngFor="let item of dataSet">
+ 
+  </ion-card>
+    </ion-list>    
+</div>
+
+
+
+
+	 
+ 
+
+<!-- <button ion-button (click)="takePhoto()" full color="primary">take photo</button>
+<button ion-button (click)="getImage()" full color="secondary">Get Photo from </button> -->
+<!-- <button ion-button (click)="cropImage()" full color="danger">Take Photo </button> -->
+<!-- <button ion-button (click)="uploadImage()" full color="danger">Upload Image 4</button> -->
+
+ 
+
+<!-- <button ion-button block (click)="logout()">Log out</button> -->
+</ion-content>
+        <div id="bottom">
+
+                <button ion-button color="light" clear class="iconbutton" (click)="openLoginPage()">
+                    <div class="profile">
+                        <ion-icon class="ionicicons" md="md-contact" ios="ios-contact" style="color:rgb(2, 78, 145);"></ion-icon>
+                    </div>
+                </button>
+
+                <button  ion-button color="light" clear class="iconbutton" (click)="openSchedulePage()">
+                    <div class="padnote">
+                        <ion-icon class="ionicicons" ios="ios-bookmarks" md="md-bookmarks"></ion-icon>
+                    </div>
+                </button>
+
+                <button  ion-button color="light" clear class="iconbutton" (click)="openHomePage()">
+                    <div class="news">
+                        <ion-icon class="ionicicons" md="md-home" ios="ios-home"></ion-icon>
+                    </div>
+                </button>
+
+                <button  ion-button color="light" clear class="iconbutton"  (click)="openMapPage()">
+                    <div class="menu-heart">
+                      <ion-icon class="ionicicons" ios="ios-navigate" md="md-navigate"></ion-icon>
+                    </div>
+                </button>
+
+                <button menuToggle ion-button color="light" clear class="iconbutton">
+                    <div class="burger" >
+                        <ion-icon class="ionicicons" md="md-menu" ios="ios-menu"></ion-icon>
+                    </div>
+                </button>
+
+        </div>
