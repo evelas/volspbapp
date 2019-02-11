@@ -9,7 +9,7 @@ import { LikePage } from '../like/like';
 import { SchedulePage } from '../schedule/schedule';
 import { AboutPage } from '../about/about';
 import { AreyouinPage } from '../areyouin/areyouin';
-
+import { Page1 } from '../page1/page1';
 
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 /**
@@ -52,6 +52,15 @@ openLoginPage() {
     this.navCtrl.setRoot(LoginPage);
   	}
 
+openHomePage(){
+
+    let options: NativeTransitionOptions = {
+      iosdelay: 50,
+      androiddelay: 50,
+     };
+    this.nativePageTransitions.fade(null);
+    this.navCtrl.setRoot(Page1);
+    }
 
 openMapPage(){
     let options: NativeTransitionOptions = {
