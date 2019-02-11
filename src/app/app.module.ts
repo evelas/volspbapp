@@ -27,6 +27,7 @@ import { Areyouin2Page } from '../pages/areyouin2/areyouin2';
 import { LinkyModule } from 'angular-linky';
 import { AuthService } from '../providers/auth-service/auth-service';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Geolocation } from '@ionic-native/geolocation';
 
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
@@ -63,7 +64,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     AdminPage
   ],
   imports: [
-    BrowserModule, NgxQRCodeModule,
+    BrowserModule, NgxQRCodeModule, HttpClientModule,
     IonicModule.forRoot(MyApp), HttpModule, LinkyModule, SelectSearchableModule
   ],
   bootstrap: [IonicApp],

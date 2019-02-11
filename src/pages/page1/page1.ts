@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {LoadingController} from 'ionic-angular';
-import { ModalController } from 'ionic-angular';
-
  
 
 import { LoginPage } from '../login/page/page';
@@ -13,7 +11,8 @@ import { AboutPage } from '../about/about';
 import { FormPage } from '../form/form';
 import { AreyouinPage } from '../areyouin/areyouin';
 import { Areyouin2Page } from '../areyouin2/areyouin2';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 
 @Component({
@@ -21,24 +20,28 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
     templateUrl: 'page1.html'
 })
 export class Page1 {
+  public items:any;
 public isSearchbarOpened = false;
     constructor(public navCtrl: NavController,
      public loadingCtrl:LoadingController,
       public navParams: NavParams,
-<<<<<<< Updated upstream
-       private nativePageTransitions: NativePageTransitions) {
-=======
        private nativePageTransitions: NativePageTransitions,
-       public http: HttpClient,
-       private modal: ModalController
+       public http: HttpClient
        ) {
->>>>>>> Stashed changes
 
+      this.getData();
      
 
     }
 
-
+getData(){
+  let url = 'https://volspb.ru/news2.json';
+  let data: Observable<any> = this.http.get(url);
+  data.subscribe(result => {
+    this.items= result;
+    
+  })
+}
      
 openLoginPage() {
 		let loader = this.loadingCtrl.create({
