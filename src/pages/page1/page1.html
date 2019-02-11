@@ -38,27 +38,15 @@
     </ion-card-content>
   </ion-card>
 
-
-
-  <ion-card *ngFor="let item of items">    
-    <img [src]="item.thumbnail">
-    <ion-card-content>
-        <ion-card-title>
-            {{ item.title }}
-            <p>{{ item.news }} </p>
-             
-        </ion-card-title>
-    </ion-card-content>
-
-
-  </ion-card>
-            <!-- <ion-card class="newsjson">
+ 
+              <ion-card class="newsjson">
                     <img src='https://pp.userapi.com/c848520/v848520439/a3464/T5x7kdgt4M0.jpg' (click)="openAreyouin2Page()">
                     <article>
                         <h2>Международный Форум «Коммуникация и Инклюзия»</h2> 
                         <p>Нужны добровольцы
                             7 ноября 2018
                         </p>
+                        <button ion-button (click)="openAreyouin2Page()">Регистрация</button>
                     </article>
             </ion-card>
 
@@ -95,8 +83,7 @@
                         <h2>Фестиваль вконтакте!</h2> 
                         <p> 21 июля, набор волонтеров.</p>
                     </article>
-            </ion-card> -->
-
+            </ion-card>  
 
 
         <!--<ion-card> подложка
