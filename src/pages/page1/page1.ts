@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {LoadingController} from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
+
  
 
 import { LoginPage } from '../login/page/page';
@@ -23,7 +25,14 @@ public isSearchbarOpened = false;
     constructor(public navCtrl: NavController,
      public loadingCtrl:LoadingController,
       public navParams: NavParams,
+<<<<<<< Updated upstream
        private nativePageTransitions: NativePageTransitions) {
+=======
+       private nativePageTransitions: NativePageTransitions,
+       public http: HttpClient,
+       private modal: ModalController
+       ) {
+>>>>>>> Stashed changes
 
      
 

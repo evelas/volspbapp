@@ -31,12 +31,14 @@
       <div class="middle">
         <h1>Новости</h1>
       </div>  
+
   <ion-card *ngFor="let item of dataSet">
     <ion-card-content>
      <p [innerHTML]="item.feed | linky"></p>
   
     </ion-card-content>
   </ion-card>
+<<<<<<< Updated upstream
             <ion-card class="newsjson">
                     <img src='https://pp.userapi.com/c848520/v848520439/a3464/T5x7kdgt4M0.jpg' (click)="openAreyouin2Page()">
                     <article>
@@ -103,6 +105,27 @@
       <ion-icon name="menu"></ion-icon>
     </button><button ion-button (click)="OpenpagePage()">Go</button>
 -->
+=======
+
+
+
+  <ion-card *ngFor="let item of items">    
+    <img [src]="item.thumbnail" (click)="openAreyouin2Page()">
+    <ion-card-content>
+        <ion-card-title>
+            {{ item.title }}
+            <p id="txt">{{ item.news }} </p>
+
+           <button   ion-button id="btn" >Регистарция</button>  
+           
+        </ion-card-title>
+
+    </ion-card-content>
+
+
+  </ion-card>
+ 
+>>>>>>> Stashed changes
 
 </ion-content>
         <div id="bottom">
