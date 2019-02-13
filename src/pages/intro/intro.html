@@ -5,14 +5,32 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>intro</ion-title>
-  </ion-navbar>
+ 
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-slides pager="true" parallax="true" padding>
 
+    <ion-slide>
+      <img src="images/intro/rocket-launch.jpg">
+      <h1>Добро пожаловать в приложение Добровольцев Петербурга!</h1>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="images/intro/gg-sketch.png">
+      <h1>Новости</h1>
+      <p>Читайте новости о мероприятиях. Выбирайте понравившиеся и регистритуйтесь!</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="images/intro/simple007.png">
+      <h1>Возможности</h1>
+      
+        <p>Электронная книжка волонтера, карта с мероприятиями, расписание и многое другое</p>
+     <button ion-button (click)="navHome()">Готово</button>
+    </ion-slide>
+
+  </ion-slides>
 </ion-content>

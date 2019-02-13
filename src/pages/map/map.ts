@@ -57,7 +57,7 @@ export class MapPage {
     leaflet.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
        
     }).addTo(this.map);
-  // var someFeatures;
+  var someFeatures;
  
 leaflet.geoJSON(someFeatures, {
     onEachFeature: function onEachFeature(feature, layer) {

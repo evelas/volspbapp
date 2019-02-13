@@ -6,6 +6,7 @@ import {LoadingController} from 'ionic-angular';
 import { LoginPage } from '../login/page/page';
 import { MapPage } from '../map/map';
 import { LikePage } from '../like/like';
+
 import { SchedulePage } from '../schedule/schedule';
 import { AboutPage } from '../about/about';
 import { FormPage } from '../form/form';
@@ -14,6 +15,10 @@ import { Areyouin2Page } from '../areyouin2/areyouin2';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+// intro page
+import { IntroPage } from '../intro/intro';
+import { Storage } from '@ionic/storage';
+
 
 @Component({
     selector: 'page-page1',
@@ -26,13 +31,16 @@ public isSearchbarOpened = false;
      public loadingCtrl:LoadingController,
       public navParams: NavParams,
        private nativePageTransitions: NativePageTransitions,
-       public http: HttpClient
+       public http: HttpClient,
+       public storage: Storage
        ) {
 
       this.getData();
      
 
     }
+
+
 
 getData(){
   let url = 'https://volspb.ru/news2.json';
@@ -141,4 +149,14 @@ openAreyouin2Page(){
     // onLink(url: string) {
     //     window.open(url);
     // }
+
+  ionViewDidLoad() {
+  this.storage.get('intro-done').then(done => {
+    if (!done) {
+      this.storage.set('intro-done', true);
+      this.navCtrl.setRoot(IntroPage);
+    }
+  });
+}
+
 }

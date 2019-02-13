@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Page1 } from '../page1/page1';
 /**
  * Generated class for the IntroPage page.
  *
@@ -21,5 +21,7 @@ export class IntroPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad IntroPage');
   }
-
+navHome() {
+    this.navCtrl.setRoot(Page1);
+  }
 }
