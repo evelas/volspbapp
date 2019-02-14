@@ -11,17 +11,21 @@
 
 
 <ion-content>
-  <ion-slides pager="true" parallax="true" padding>
+  <ion-slides pager="true" parallax="true" padding #slides>
 
-    <ion-slide>
+    <ion-slide >
       <img src="images/intro/rocket-launch.jpg">
       <h1>Добро пожаловать в приложение Добровольцев Петербурга!</h1>
+      
+  <span (click)="nextSlide()" class="nextSlide"><b>Далее</b></span>
     </ion-slide>
 
     <ion-slide>
       <img src="images/intro/gg-sketch.png">
       <h1>Новости</h1>
       <p>Читайте новости о мероприятиях. Выбирайте понравившиеся и регистритуйтесь!</p>
+      <span class="prevSlide" (click)="prevSlide()"><b>Назад</b></span>
+      <span (click)="nextSlide()" class="nextSlide"><b>Далее</b></span>
     </ion-slide>
 
     <ion-slide>
@@ -29,7 +33,8 @@
       <h1>Возможности</h1>
       
         <p>Электронная книжка волонтера, карта с мероприятиями, расписание и многое другое</p>
-     <button ion-button (click)="navHome()">Готово</button>
+     <span class="prevSlide" (click)="prevSlide()"><b>Назад</b></span>
+     <span (click)="navHome()" class="nextSlide"><b>Готово</b></span>
     </ion-slide>
 
   </ion-slides>

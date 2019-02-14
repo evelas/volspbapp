@@ -40,6 +40,10 @@ import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 
 
+//introslider
+import { IntroPage } from '../pages/intro/intro';
+import { IonicStorageModule } from '@ionic/storage';
+
 //search
 import { SelectSearchableModule } from 'ionic-select-searchable';
  
@@ -61,11 +65,12 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     Areyouin2Page,
     RegPage,
     ProfilePage,
-    AdminPage
+    AdminPage,
+    IntroPage
   ],
   imports: [
     BrowserModule, NgxQRCodeModule, HttpClientModule,
-    IonicModule.forRoot(MyApp), HttpModule, LinkyModule, SelectSearchableModule
+    IonicModule.forRoot(MyApp), HttpModule, LinkyModule, SelectSearchableModule, IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -81,7 +86,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     Areyouin2Page,
     RegPage,
     ProfilePage,
-    AdminPage
+    AdminPage,
+    IntroPage
   ],
   providers: [
     StatusBar,
