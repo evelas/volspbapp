@@ -1,3 +1,16 @@
 page-about {
-
+	.wall p{
+		 
+		line-height: 1.562;
+	    padding-top: 3px;
+	    overflow: hidden;
+	    word-wrap: break-word;
+	    font-size: 14px;
+	}
+	.wall{
+	padding: 8px 20px 19px;
+	}
+	.wall h1{
+	text-align: center;
+	}
 }

@@ -48,3 +48,10 @@ ion-list{
  * ::-webkit-scrollbar{
  display:none;
  }
+ p{
+        line-height: 1.562;
+        padding-top: 3px;
+        overflow: hidden;
+        word-wrap: break-word;
+        font-size: 14px;
+    }
